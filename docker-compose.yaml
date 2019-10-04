@@ -1,0 +1,27 @@
+version: '3'
+services:
+  client:
+    build: ./client
+    ports:
+      - 8089:8089
+    networks:
+      - training
+  
+  server1:
+    build: ./server1
+    networks:
+      - training
+    expose:
+      - 8088
+    
+  server2:
+    build: ./server2
+    networks:
+      - training
+    expose:
+      - 8091
+    volumes:
+      - /usr/share/dockertraining/server2/resources:/resources
+
+networks:
+  training:
