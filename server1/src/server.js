@@ -5,6 +5,7 @@ var app = express();
 const PORT = 8088;
 
 app.use(cors());
+app.options('*', cors());
 
 app.get('/fruits', (req, res) => {
     console.log('Sending fruits');

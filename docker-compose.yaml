@@ -11,15 +11,15 @@ services:
     build: ./server1
     networks:
       - training
-    expose:
-      - 8088
+    ports:
+      - 8088:8088
     
   server2:
     build: ./server2
     networks:
       - training
-    expose:
-      - 8091
+    ports:
+      - 8091:8091
     volumes:
       - /usr/share/dockertraining/server2/resources:/resources
 
